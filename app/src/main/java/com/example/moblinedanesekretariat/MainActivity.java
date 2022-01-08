@@ -2,6 +2,7 @@ package com.example.moblinedanesekretariat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebSettings;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
         web.setWebViewClient(new Callback());
-        web.loadUrl("https://github.com/LeonCookie/Dane3");
+        web.loadUrl("https://sekretariatmobline.000webhostapp.com");
     }
 
     private class Callback extends WebViewClient {
@@ -29,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
         public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
             return false;
         }
+    }
+
+    public void onConfigurationChanged(Configuration newConfig){
+        super.onConfigurationChanged(newConfig);
     }
 }
